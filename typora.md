@@ -1,12 +1,12 @@
-#### Typora 配置
+#### 图片配置
 
  ![image-20230819184234576](http://zengxinyou.test.upcdn.net/ocq/image-20230819184234576.png)
 
 
 
-#### 配置文件
+#### 图片配置文件
 
-```
+```json
 {
   "picBed": {
     "current": "smms",
@@ -25,4 +25,21 @@
 ```
 
 
+
+#### 图片主题加边框
+
+打开 `C:\Users\zengxin\AppData\Roaming\Typora\themes\github.css` 后，加上
+
+``` css
+img{
+    /* 边框 */
+    border: 1px solid #c7cac8;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 边距 */
+    padding: 4px;
+}
+```
+
+![image-20231007143435851](http://zengxinyou.test.upcdn.net/ocq/image-20231007143435851.png)
 
