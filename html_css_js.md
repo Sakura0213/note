@@ -1,6 +1,20 @@
-## html
+## 前端学习路径
 
-### 异步解码图像
+HTML -> HTML5
+
+CSS -> CSS3
+
+JavaScript -> Vue
+
+ES6
+
+
+
+## HTML
+
+### 小知识
+
+#### 异步解码图像
 
 效果：加快显示其他内容
 
@@ -10,26 +24,70 @@
 
 
 
-### 自闭合标签
-
-   ```html
-   <br/> <input/> <img/> <link/> <hr/>
-   ```
+#### 自闭合标签
 
 在后面关闭
 
+![image-20231009151337826](http://zengxinyou.test.upcdn.net/ocq/image-20231009151337826.png)
 
 
-### 区块
 
-   * 块级元素用 `<div>` ，块元素是一个元素，占用了全部宽度，在前后都是换行符。
-   * 行级元素用 `<span>` ，内联元素只需要必要的宽度，不强制换行。
+#### 空格
 
-常见问题：
+HTML 代码中的所有连续的空行或换行会被显示为一个空格
 
-* p元素不能包含任何块级元素(包括自身)
-* a元素可以包含任何其他元素(除了自身) 
-* document是文档(整个DOM树)的根节点    
+
+
+#### 斜体和加粗
+
+   * 斜体用 ` <em>`
+   * 加粗用 `<strong>`
+
+
+
+#### a 标签target属性
+
+   * target = "_blank"：新建标签打开
+   * target = "_self"：当前标签打开
+
+
+
+#### 语义化
+
+语义化是html不断发展的结果，就是看到标签的名字就知道这个标签是干什么的意思，比如hearder就是标题，footer就是结尾，video就是视频，反过来就是反语义化了。    
+
+
+
+### 块状、内联
+
+#### 区别
+
+* 块状元素
+  * 块状元素是一个元素，占用了全部宽度，在前后都是换行符。
+  * 块级元素时可以控制宽和高、margin等。
+
+* 内联元素
+  * 内联元素只需要必要的宽度，在同一行显示，不强制换行。
+  * 内联元素是不可以控制宽和高、margin等  。
+* 内联块状元素
+  * 可以同行显示的块状元素，input、img默认就是inline-block，除了可以同行显示，其他基本块状元素一样  。
+
+
+
+#### 块状和内联的切换
+
+修改css中的display属性：
+
+* inline ：使用此属性后，元素会被显示为内联元素，元素则不会换行 
+* block ：使用此属性后，元素会被现实为块状元素，元素会进行换行。   
+* inline-block ：使用此属性后，元素会被现实为内联块状元素，元素会进行换行。
+
+
+
+#### 常用的标签
+
+   * 块级元素用 `<div>` 
+   * 行级元素用 `<span>` 
 
 
 
@@ -39,70 +97,36 @@
 
 内联：`<a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code>  `
 
-内联块状： `<img>、<input>  `（为行内元素，但是有行内块   ）
+内联块状：`<img>、<input>  `（为行内元素，但是有行内块）
 
 
 
-#### 块状、内联元素的宽高
+#### 其他问题
 
-内联元素是不可以控制宽和高、margin等；并且在同一行显示，不换行。  
-
-   块级元素时可以控制宽和高、margin等，并且会换行。  
-
-1. inline ： 使用此属性后，元素会被显示为内联元素，元素则不会换行   
-
-   inline是行内元素，同行可以显示，像span、font、em、b这些默认都是行内元素，不会换行，无法设置宽度、高度、margin、border  
-
-2. block ： 使用此属性后，元素会被现实为块级元素，元素会进行换行。   
-
-   block，块元素，div、p、ul、li等这些默认都是块元素，会换行，除非设置float   
-
-3. inline-block ： 是使元素以块级元素的形式呈现在行内。意思就是说，让这个元素显示在同一行不换行，但是又可以控制高度和宽度，这相当于内敛元素的增强。(IE6不支持)   
-
-   inline-block，可以同行显示的block，想input、img这些默认就是inline-block，出了可以同行显示，其他基本block一样  
-
-
-
-### 空格
-
-   * HTML 代码中的所有连续的空行或换行会被显示为一个空格
-
-
-
-### 字体
-
-   * 加粗用 `<strong>`
-   * 斜体用 ` <em>`
-
-   
-
-### a 标签属性
-
-   * target = "_blank"：新建标签打开
-   * target = "_self"：当前标签打开
+* p元素不能包含任何块级元素（包括自身）
+* a元素可以包含任何其他元素（除了自身）
 
 
 
 ### 超链接 URL
 
-超链接的 URL可能的值：
+超链接的 URL 的值：
 
-- 绝对 URL - 指向另一个站点（比如 href="http://www.example.com/index.htm"）
-- 相对 URL - 指向站点内的某个文件（href="index.htm"）
-- 锚 URL - 指向页面中的锚（href="#top"）
-
-`<a href=”mailto:love@baidu.com”>love@baidu.com</a>`
+- 绝对 URL：指向另一个站点（比如 href="http://www.example.com/index.html"）
+- 相对 URL：指向站点内的某个文件（href="index.html"）
+- 锚点 URL：指向页面中的锚（href="#top"）
+- 邮箱 URL：指向邮箱（href="mailto:love@baidu.com"）
 
 
 
 ### GET和POST的区别
 
    * 主要
-     * GET请求会被浏览器主动缓存，POST不会。
-     * GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。
-     * 对参数的数据类型，GET只接受ASCII字符， 而POST没有限制。
-     * GET请求在URL中传送的参数是有长度限制的，而POST没有。
-     * GET参数通过URL传递，所以不能用来传递敏感信息，POST放在Request body中。
+     * 缓存：GET请求会被浏览器主动缓存，POST不会。
+     * 参数：GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。
+     * 参数的数据类型：对参数的数据类型，GET只接受ASCII字符， 而POST没有限制。
+     * 参数的长度：GET请求在URL中传送的参数是有长度限制的，而POST没有。
+     * 参数的位置：GET参数通过URL传递，所以不能用来传递敏感信息，POST放在Request body中。
 
    * 其他
      * GET在浏览器回退时是无害的，而POST会再次提交请求。
@@ -111,47 +135,34 @@
 
 
 
-### 语义化
+### iframe的局限
 
-语义化是html不断发展的结果，就是看到标签的名字就知道这个标签是干什么的意思，比如hearder就是标题，footer就是结尾，video就是视频，反过来就是反语义化了。    
-
-
-
-
-
-
-
-### iframe
-
-**局限：** 
-
-   1、创建比一般的 DOM 元素慢了 1-2 个数量级  
+1. **创建比一般的 DOM 元素慢了 1-2 个数量级**
 
    iframe 的创建比其它包括 scripts 和 css 的 DOM 元素的创建慢了 1-2 个数量级，使用 iframe 的页面一般不会包含太多 iframe，所以创建 DOM 节点所花费的时间不会占很大的比重。但带来一些其它的问题：onload 事件以及连接池（connection pool）  
 
-   2、阻塞页面加载  
+2. **阻塞页面加载**
 
    及时触发 window 的 onload 事件是非常重要的。onload 事件触发使浏览器的 “忙” 指示器停止，告诉用户当前网页已经加载完毕。当 onload 事件加载延迟后，它给用户的感觉就是这个网页非常慢。  
 
    window 的 onload 事件需要在所有 iframe 加载完毕后（包含里面的元素）才会触发。在 Safari 和 Chrome 里，通过 JavaScript 动态设置 iframe 的 SRC 可以避免这种阻塞情况  
 
-   3、唯一的连接池  
+3. **唯一的连接池**  
 
    浏览器只能开少量的连接到 web 服务器。比较老的浏览器，包含 Internet Explorer 6 & 7 和 Firefox 2，只能对一个域名（hostname）同时打开两个连接。这个数量的限制在新版本的浏览器中有所提高。Safari 3+ 和 Opera 9+ 可同时对一个域名打开 4 个连接，Chrome 1+, IE 8 以及 Firefox 3 可以同时打开 6 个  
 
    绝大部分浏览器，主页面和其中的 iframe 是共享这些连接的。这意味着 iframe 在加载资源时可能用光了所有的可用连接，从而阻塞了主页面资源的加载。如果 iframe 中的内容比主页面的内容更重要，这当然是很好的。但通常情况下，iframe 里的内容是没有主页面的内容重要的。这时 iframe 中用光了可用的连接就是不值得的了。一种解决办法是，在主页面上重要的元素加载完毕后，再动态设置 iframe 的 SRC。  
 
-   4、不利于 SEO  
+4. **不利于 SEO**  
 
    搜索引擎的检索程序无法解读 iframe。另外，iframe 本身不是动态语言，样式和脚本都需要额外导入。综上，iframe 应谨慎使用。  
 
 
 
-### readonly
+### readonly与disabled
 
-readonly 属性规定输入字段为只读,只读字段是不能修改的。不过，用户仍然可以使用 tab 键切换到该字段，还可以选中或拷贝其文本。   
-
-disabled才不可以选中。     
+* readonly：只读，不可被修改，可被选中。（使用 tab 键切换到该字段，可以选中或拷贝其文本）
+* disabled：不可被修改，不可被选中。     
 
 
 
@@ -163,36 +174,37 @@ disabled才不可以选中。
 
 ### 图形验证码
 
-服务器端生成验证码后一方面通过图片将验证码返回给客户端,同时在服务器端保存文本的验证码,由服务器端验证输入内容是否正确。
+**服务器端**生成验证码后一方面通过图片将验证码返回给**客户端**，同时在**服务器端**保存文本的验证码，由**服务器端**验证输入内容是否正确。
 
 
 
 ### HTML 音频/视频 方法 
 
-| 方法                                                         | 描述                                      |
-| :----------------------------------------------------------- | :---------------------------------------- |
-| [addTextTrack()](https://www.runoob.com/tags/av-met-addtexttrack.html) | 向音频/视频添加新的文本轨道。             |
-| [canPlayType()](https://www.runoob.com/tags/av-met-canplaytype.html) | 检测浏览器是否能播放指定的音频/视频类型。 |
-| [load()](https://www.runoob.com/tags/av-met-load.html)       | 重新加载音频/视频元素。                   |
-| [play()](https://www.runoob.com/tags/av-met-play.html)       | 开始播放音频/视频。                       |
-| [pause()](https://www.runoob.com/tags/av-met-pause.html)     | 暂停当前播放的音频/视频。                 |
+* 方法
 
-```
-方法：load() play() pause()
-事件：play() playing() pause() seeked() seeking() abort()当音频/视频的加载已放弃时触发
-```
+  | 方法                                                         | 描述                                      |
+  | :----------------------------------------------------------- | :---------------------------------------- |
+  | [addTextTrack()](https://www.runoob.com/tags/av-met-addtexttrack.html) | 向音频/视频添加新的文本轨道。             |
+  | [canPlayType()](https://www.runoob.com/tags/av-met-canplaytype.html) | 检测浏览器是否能播放指定的音频/视频类型。 |
+  | [load()](https://www.runoob.com/tags/av-met-load.html)       | 重新加载音频/视频元素。                   |
+  | [play()](https://www.runoob.com/tags/av-met-play.html)       | 开始播放音频/视频。                       |
+  | [pause()](https://www.runoob.com/tags/av-met-pause.html)     | 暂停当前播放的音频/视频。                 |
+
+* 事件
+
+  https://www.runoob.com/tags/ref-av-dom.html
 
 
 
 ### 单选框和复选框
 
-radio:单选框
+radio：单选框
 
-checkbox:复选框
+checkbox：复选框
 
 
 
-### 显示缩写标签
+### 缩写显示标签abbr
 
 ```html
 The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
@@ -200,21 +212,41 @@ The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
 
 
 
-### 表单input type
+### from表单
+
+#### input类型
 
  ![image-20231008165524596](http://zengxinyou.test.upcdn.net/ocq/image-20231008165524596.png)
 
-date和datetime-local都支持修改时间
-
- ![ ](http://zengxinyou.test.upcdn.net/ocq/50FA601285A94F690B61787B2B8B3B31)
-
-range
-
- <img src="http://zengxinyou.test.upcdn.net/ocq/350480372_1605454018673_3A5EB5EE7BDB6EDAD96424A428C71762" alt="img" style="zoom: 50%;" />
+range：<img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011112101352.png" alt="image-20231011112101352" style="zoom:67%;" />
 
 
 
-### select
+#### input 时间组件
+
+* date：年、月、日
+
+   <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011135327829.png" alt="image-20231011135327829" style="zoom: 67%;" />
+
+* month：年、月
+
+   <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011135542806.png" alt="image-20231011135542806" style="zoom:67%;" />
+
+* week：年、周
+
+   <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011135417926.png" alt="image-20231011135417926" style="zoom:67%;" /> 
+
+* time：小时、分钟
+
+   <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011135504991.png" alt="image-20231011135504991" style="zoom: 80%;" />
+
+* datetime：年、月、日、小时、分钟
+
+   <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011135726757.png" alt="image-20231011135726757" style="zoom:67%;" />
+
+
+
+#### select 组件
 
 ``` html
 <form name="a">
@@ -272,7 +304,7 @@ var selectedText =options[index].text;
 
 
 
-### textarea
+#### textarea 组件
 
 textarea：多行文本输入框    
 
@@ -282,7 +314,7 @@ textarea：多行文本输入框
 
 ### 屏幕的尺寸标准
 
- ![image-20231008181921114](http://zengxinyou.test.upcdn.net/ocq/image-20231008181921114.png)
+ <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231008181921114.png" alt="image-20231008181921114" style="zoom: 80%;" />
 
 
 
@@ -320,6 +352,29 @@ textarea：多行文本输入框
 ### canvas
 
 * canvas是HTML5的一部分，允许脚本动态渲染位图像
+
+  ```html
+  <body>
+      
+  <canvas id="tutorial" width="300" height="300"></canvas>
+      
+  <script type="text/javascript">
+  //绘制两个矩形    
+  function draw(){
+      var canvas = document.getElementById('tutorial');
+      if(!canvas.getContext) return;
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "rgb(200,0,0)";
+        //绘制矩形
+      ctx.fillRect (10, 10, 55, 50);
+      ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+      ctx.fillRect (30, 30, 55, 50);
+  }
+  draw();
+  </script>
+      
+  </body>
+  ```
 * canvas拥有多种绘制路径、矩形、圆形、字符及添加图像的方法
 * Internet Explorer自Internet Explorer9起已经可以支持canvas
 
@@ -331,28 +386,14 @@ textarea：多行文本输入框
 
 
 
-### 时间组件
-
-date  选取日、月、年 
-
-month 选取月和年 
-
-week  选取周和年 
-
-time  选取时间（小时和分钟）
-
-
-
 ### 常见错误
 
 * 在下列标签中，哪个标签表示最小的标题？h6，没有h7。
 * `<ul>下不能直接放置<p>`
 * 调用canvas对象的getContext方法来获取绘图环境
-* meter标签类似于进度条，按百分比显示。 input的type属性可以设置为range，范围可调。
+* meter标签类似于进度条，按百分比显示。 <img src="http://zengxinyou.test.upcdn.net/ocq/image-20231011145238479.png" alt="image-20231011145238479" style="zoom:50%;" />
 * video是作为Flash的替代技术出现
 * head 标签中必不少的是标题title和编码meta
-
-
 
 
 
@@ -381,7 +422,7 @@ manifest 属性规定文档的缓存 manifest 的位置，manifest 文件是一�
 
 ### 储存
 
- HTML5中增加了两种全新的数据存储方式：WebStorage和WebSQLDatabase。 
+ HTML5中增加了两种全新的数据存储方式：WebStorage和WebSQLDatabase 
 
 * WebStorage：临时或永久保存客户端的少量数据。 分为两种：
   * sessionStorage(浏览器关闭则消失)
@@ -726,6 +767,8 @@ border:2px solid #a1a1a1;
 
 https://blog.csdn.net/XNHYJSL/article/details/116053794?spm=1001.2014.3001.5501
 
+https://www.cnblogs.com/asheng2016/p/7281784.html
+
 BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与, 
 
   哪些情况会产生BFC: 
@@ -894,6 +937,12 @@ DOM树一共有12种节点类型，常用的有4种：
 3、Text类型（文本节点）——包含文本
 
 4、Comment类型（注释节点）——有时我们可以将一些信息放入其中，它不会显示，但JS可以从DOM中读取它。
+
+
+
+document是文档(整个DOM树)的根节点    
+
+
 
 
 
